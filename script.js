@@ -78,25 +78,23 @@ function prepare(el) {
 
 // Lvl Counter Start
 
-let lvlNum = 0
 let interval
 let intervalNum = 100
 
 let headerLvlTimer = document.querySelector(".header__timer-extra")
 
 function lvlCount() {
-    lvlNum++
-    headerLvlTimer.innerHTML = lvlNum
+    headerLvlTimer.innerHTML++
 
     interval = setTimeout(() => {
         lvlCount()
-        if (lvlNum == 100) {
+        if (headerLvlTimer.innerHTML == 100) {
             clearInterval(interval)
-        } else if (lvlNum >= 50 && lvlNum < 80) {
+        } else if (headerLvlTimer.innerHTML >= 50 && headerLvlTimer.innerHTML < 80) {
             intervalNum = 200
-        } else if (lvlNum >= 80 && lvlNum < 95) {
+        } else if (headerLvlTimer.innerHTML >= 80 && headerLvlTimer.innerHTML < 95) {
             intervalNum = 300
-        } else if (lvlNum >= 95) {
+        } else if (headerLvlTimer.innerHTML >= 95) {
             intervalNum = 600
         }
     }, intervalNum);
